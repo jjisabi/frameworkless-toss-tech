@@ -1,5 +1,8 @@
+import getData from "../api/getData.js";
+
 export default(container) => {
     const tech = () => {
+      getData();
       container.textContent = "개발";
     };
     
