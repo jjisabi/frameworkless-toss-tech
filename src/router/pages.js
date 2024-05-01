@@ -1,13 +1,14 @@
-import getData from "../api/getData.js";
+import ListItem from "../view/mainList.js";
+
+window.customElements.define("list-item", ListItem);
 
 export default(container) => {
     const tech = () => {
-      getData();
-      container.textContent = "개발";
+      container.innerHTML = `<list-item></list-item>`;
     };
     
     const design = () => {
-      container.textContent = "디자인";
+      container.innerHTML = `<list-item></list-item>`;
     };
     
     const detail = (params) => {

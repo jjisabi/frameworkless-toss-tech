@@ -1,9 +1,7 @@
 import { LIST_DATA } from "../data/data-list.js";
 
-console.log("LIST_DATA: " + LIST_DATA[0].category);
-
-const getData = ()  => {
-    
+const getData = (category)  => {
+    return category === "tech" ? LIST_DATA.tech : LIST_DATA.design;
 }
 
 export default getData;
