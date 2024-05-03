@@ -31,6 +31,7 @@ class ListItem extends HTMLElement {
         ${this.state?.listItem
           .map(
             ({
+              id,
               category_title,
               thumbImg,
               title,
@@ -39,7 +40,7 @@ class ListItem extends HTMLElement {
             }) =>
               `<h1>${category_title}</h1>
                 <ul>
-                  <li>
+                  <li data-navigate="/detail/${id}">
                     <div>
                       <img class="list-image" src=${thumbImg} />
                       <h1>${title}</h1>

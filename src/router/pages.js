@@ -1,6 +1,8 @@
 import ListItem from "../view/mainList.js";
+import DetailItem from "../view/DetailList.js";
 
 window.customElements.define("list-item", ListItem);
+window.customElements.define("detail-item", DetailItem);
 
 export default(container) => {
     const tech = () => {
@@ -13,7 +15,7 @@ export default(container) => {
     
     const detail = (params) => {
       const { id } = params;
-      container.textContent = `상세 페이지 ${id}`;
+      container.innerHTML = `<detail-item id=${id}></detail-item>`
     };
     
     const notFound = () => {
