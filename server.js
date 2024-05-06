@@ -11,7 +11,7 @@ const PORT = 3000;
 app.use(express.static(path.resolve(__dirname)));
 
 //2. 브라우저에서 보내는 GET 요청에 응답 설정 ('/' 경로로 요청이 들어오면 index.html 전송한다.)
-app.get('/', (res) => {
+app.get('/*', function(req, res) {
     res.sendFile(path.resolve(__dirname, "index.html"));
 })
 
