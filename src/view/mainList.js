@@ -14,45 +14,46 @@ class ListItem extends HTMLElement {
   }
 
   start() {
-  this.innerHTML = `
-    <style>
-      ul{
-        list-style:none;
-      }
-      .list-image {
-        width: 200px;
-        height: 200px;
-      }
-    </style>
-    `;
+    this.innerHTML = `
+      <style>
+        ul{
+          list-style:none;
+        }
+        .list-image {
+          width: 200px;
+          height: 200px;
+        }
+      </style>
+      `;
+    
+    const category = this.state.listItem[0].category_title === "개발" ? "개발" : "디자인";
 
-   this.innerHTML += 
-      `<div>
-        ${this.state?.listItem
-          .map(
-            ({
-              id,
-              category_title,
-              thumbImg,
-              title,
-              description,
-              uploadDate,
-            }) =>
-              `<h1>${category_title}</h1>
-                <ul>
-                  <li data-navigate="/detail/${id}">
-                    <div>
-                      <img class="list-image" src=${thumbImg} />
-                      <h1>${title}</h1>
-                      <p>${description}</p>
-                      <time>${uploadDate}</time>
-                    </div>
-                  </li>
-                </ul>
-              `
-          )
-        .join("")}
-      </div>`;
+    this.innerHTML += 
+        `<div>
+          <h1>${category}</h1>
+          ${this.state?.listItem
+            .map(
+              ({
+                id,
+                thumbImg,
+                title,
+                description,
+                uploadDate,
+              }) =>
+                `<ul>
+                    <li data-navigate="/detail/${id}">
+                      <div>
+                        <img class="list-image" src=${thumbImg} />
+                        <h1>${title}</h1>
+                        <p>${description}</p>
+                        <time>${uploadDate}</time>
+                      </div>
+                    </li>
+                  </ul>
+                `
+            )
+          .join("")}
+        </div>`;
     }
   }
   
