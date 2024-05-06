@@ -1,15 +1,21 @@
+import ListItem from "../view/mainList.js";
+import DetailItem from "../view/DetailList.js";
+
+window.customElements.define("list-item", ListItem);
+window.customElements.define("detail-item", DetailItem);
+
 export default(container) => {
     const tech = () => {
-      container.textContent = "개발";
+      container.innerHTML = `<list-item></list-item>`;
     };
     
     const design = () => {
-      container.textContent = "디자인";
+      container.innerHTML = `<list-item></list-item>`;
     };
     
     const detail = (params) => {
       const { id } = params;
-      container.textContent = `상세 페이지 ${id}`;
+      container.innerHTML = `<detail-item id=${id}></detail-item>`
     };
     
     const notFound = () => {

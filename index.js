@@ -23,10 +23,10 @@ router
   버튼 클릭 시 라우팅 기능 적용
   버튼의 data-navigate 속성 가져오고, 클릭 시 경로를 param으로 넘겨 router의 navigate() 메서드를 호출하여 경로 이동
 */
-const BTN_SELECTOR = "button[data-navigate]";
+const ATTR_SELECTOR = "[data-navigate]";
 document.body.addEventListener("click", (e) => {
-  const { target } = e;
-  if (target.matches(BTN_SELECTOR)) {
+  const target = e.target.closest(ATTR_SELECTOR);
+  if (target !== null && target.matches(ATTR_SELECTOR)) {
     const { navigate } = target.dataset;
     router.navigate(navigate);
   }
