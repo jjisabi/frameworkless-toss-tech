@@ -1,4 +1,7 @@
 import getDetailData from "../api/getDetailDatai.js";
+import DetailBottom from "./detailBottom.js";
+
+window.customElements.define("detail-bottom", DetailBottom);
 
 class DetailItem extends HTMLElement {
     constructor(){
@@ -25,7 +28,9 @@ class DetailItem extends HTMLElement {
             <p class="text-[#333d4b] font-[600]">${this.state.detailContents.writer}</p>
             <time class="text-[15px] text-[#8b95a1] leading-[1.6]">${this.state.detailContents.uploadDate}</time>
             <p class="flex flex-col mt-16">${this.state.detailContents.content}</p>
-        </section>`;
+            <detail-bottom></detail-bottom>
+        </section>
+        `;
     }
 }
 
