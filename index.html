@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet">
     <title>토스 기술 블로그, 토스 테크 (프레임워크 없는 프론트엔드 개발)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
     <header>
-      <div>
-        <button class="btn" data-navigate="/tech">개발</button>
-        <button class="btn" data-navigate="/design">디자인</button>
-      </div>
+      <nav class="flex justify-between items-center h-[60px] border border-solid border-b-[#ddd] px-[30px]">
+        <h1 class="w-[130px] flex-shrink-0"><img src="/src/view/toss-tech-logo.png" /></h1>
+        <div class="flex items-center gap-x-[20px]">
+          <button data-navigate="/tech" class="text-[15px] text-[#4e5968]">개발</button>
+          <button data-navigate="/design" class="text-[15px] text-[#4e5968]">디자인</button>
+          <button type="button" class="bg-[#3182f6] py-[7px] px-[12px] text-[14px] rounded-[4px] text-[#fff]">채용 바로가기</button>
+        </div>
+      </nav>
     </header>
-
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
 
     <div id="app"></div>
 
