@@ -2,11 +2,13 @@ import ListItem from "../view/mainList.js";
 import DetailItem from "../view/DetailList.js";
 import Footer from "../view/footer.js";
 import Banner from "../view/banner.js";
+import Header from "../view/header.js";
 
 window.customElements.define("list-item", ListItem);
 window.customElements.define("detail-item", DetailItem);
 window.customElements.define("footer-component", Footer);
 window.customElements.define("banner-component", Banner);
+window.customElements.define("header-component", Header);
 
 export default(container) => {
     const tech = () => {
