@@ -11,7 +11,7 @@ const URL_FRAGMENT_REGEXP = "([^\\/]+)";
  * pathname: /detail/123
  * match(): /detail/123,123
  */
-const extractUrlParams = (route, pathname) => {
+export const extractUrlParams = (route, pathname) => {
   const params = {};
 
   if (route.params.length === 0) {
@@ -44,6 +44,8 @@ export default () => {
     if (lastPathname === pathname) {
       return;
     }
+
+    lastPathname = pathname;
 
     const currentRoute = routes.find((route) => {
       const { testRegExp } = route;
