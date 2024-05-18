@@ -1277,10 +1277,6 @@ video {
   transition-duration: 150ms;
 }
 
-.\[a-zA-Z0-9\:\\\\-\\\\\._\$\] {
-  a-z-a--z0-9: \\-\\. $;
-}
-
 .last\:mb-\[0\]:last-child {
   margin-bottom: 0;
 }
