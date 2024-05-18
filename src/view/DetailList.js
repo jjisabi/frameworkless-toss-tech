@@ -1,4 +1,7 @@
 import getDetailData from "../api/getDetailDatai.js";
+import DetailBottom from "./detailBottom.js";
+
+window.customElements.define("detail-bottom", DetailBottom);
 
 class DetailItem extends HTMLElement {
     constructor(){
@@ -18,21 +21,16 @@ class DetailItem extends HTMLElement {
     }
 
     render() {
-        this.innerHTML = `
-         <style>
-            .detail-image {
-                width: 600px;
-                height: 350px;
-            }
-         </style>
-      `;
-        this.innerHTML += `<div>
-        <img class="detail-image" src=${this.state.detailContents.thumbImg} />
-        <h1>${this.state.detailContents.title}</h1>
-        <p>${this.state.detailContents.writer}</p>
-        <p>${this.state.detailContents.uploadDate}</p>
-        <p>${this.state.detailContents.content}</p>
-        </div>`;
+        this.innerHTML += 
+        `<section class='px-[30px] max-w-[680px] mb-[192px] mt-[52px] mx-auto'>
+            <img class="flex-shrink-0 flex-grow-0 flex-[240px] overflow-hidden object-cover rounded-[14px]" src=${this.state.detailContents.thumbImg} />
+            <h1 class="mb-[14px] text-[#333d4b] font-[600] text-[45px]">${this.state.detailContents.title}</h1>
+            <p class="text-[#333d4b] font-[600]">${this.state.detailContents.writer}</p>
+            <time class="text-[15px] text-[#8b95a1] leading-[1.6]">${this.state.detailContents.uploadDate}</time>
+            <p class="flex flex-col mt-16">${this.state.detailContents.content}</p>
+            <detail-bottom></detail-bottom>
+        </section>
+        `;
     }
 }
 
